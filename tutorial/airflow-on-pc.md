@@ -9,6 +9,20 @@
 % pip install apache-airflow
 
 % airflow info
+Apache Airflow
+version                | 2.8.4
+executor               | SequentialExecutor
+task_logging_handler   | airflow.utils.log.file_task_handler.FileTaskHandler
+sql_alchemy_conn       | sqlite:////Users/soonbeom/airflow/airflow.db
+dags_folder            | /Users/soonbeom/airflow/dags
+plugins_folder         | /Users/soonbeom/airflow/plugins
+base_log_folder        | /Users/soonbeom/airflow/logs
+remote_base_log_folder |
+
+System info
+OS              | Mac OS
+...
+
 
 % cd airflow
 % ls -la
