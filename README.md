@@ -27,15 +27,6 @@ In this workshop, we're going to go through how to build machine learing pipelin
     
 
 
-## .. ##
-
-* [#1. Airflow 설치하기](https://github.com/gnosia93/airflow-on-aws/blob/main/tutorial/airflow-on-pc.md)
-
-* [#2. IMDB 파일 S3 업로드하기](https://github.com/gnosia93/airflow-on-aws/blob/main/tutorial/airflow_s3.md)
-
-* [#3. AWS Glue 실행하기](https://github.com/gnosia93/airflow-on-aws/blob/main/tutorial/airflow_glue.md)
-
-
 ## ,, ##
 
 * workshop spec
