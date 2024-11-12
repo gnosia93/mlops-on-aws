@@ -1,6 +1,6 @@
 # mlops-on-aws
 
-
+In this workshop, we will go through how to build machine learing pipeline with apache airflow and MLflow
 
 
 
