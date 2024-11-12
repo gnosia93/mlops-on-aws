@@ -5,7 +5,7 @@ In this workshop, we're going to go through how to build machine learing pipelin
 
 ### prerequisite ###
 
-You need to install apache airflow on you PC.
+* Install apache airflow on your PC first 
 
 
 ### Tutorial ###
