@@ -3,6 +3,7 @@
 In this workshop, we're going to go through how to build machine learing pipeline with apache airflow and MLflow
 
 
+1. call sagemaker taining job.
 
 
 
