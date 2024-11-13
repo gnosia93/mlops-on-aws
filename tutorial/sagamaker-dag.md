@@ -1,3 +1,4 @@
+* https://yann.lecun.com/exdb/mnist/ 
 
 
 ## 참고자료 ##
