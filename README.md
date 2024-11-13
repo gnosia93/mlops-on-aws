@@ -13,9 +13,7 @@ In this workshop, we're going to go through how to build machine learing pipelin
 
 ### Tutorial ###
 1. call sagemaker taining job.
-
-
-
+    - https://yann.lecun.com/exdb/mnist/ 
 
 
 
