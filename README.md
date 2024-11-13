@@ -2,6 +2,8 @@
 
 In this workshop, we're going to go through how to build machine learing pipeline with apache airflow and MLflow
 
+![](https://github.com/gnosia93/mlops-on-aws/blob/main/images/mlops-on-aws.png)
+
 
 ### prerequisite ###
 
