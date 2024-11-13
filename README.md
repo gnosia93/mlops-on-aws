@@ -8,6 +8,7 @@ In this workshop, we're going to go through how to build machine learing pipelin
 ### prerequisite ###
 
 * _[Install apache airflow on your PC first](https://github.com/gnosia93/mlops-on-aws/blob/main/tutorial/airflow-on-pc.md)_
+* _Provision EKS Cluster_
 
 
 ### Tutorial ###
