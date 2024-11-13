@@ -12,8 +12,7 @@ In this workshop, we're going to go through how to build machine learing pipelin
 
 
 ### Tutorial ###
-1. call sagemaker taining job.
-    - https://yann.lecun.com/exdb/mnist/ 
+1. [call sagemaker Dag](https://github.com/gnosia93/mlops-on-aws/blob/main/tutorial/sagamaker-dag.md)
 
 
 
