@@ -52,3 +52,9 @@ Airflow can be located in anywhere among your laptop, EKS cluster, EC2 and MWAA(
 * Dataset : Giga byte 이상의 데이터타 셋 확보 필요.. (Regression or Classification 용)
 * Storage : HDFS(EMR), S3
 * Monitoring : cloudwatch X -> prometheus & grafana O
+
+
+## 레퍼런스 ##
+
+* https://github.com/Teradata/airflow/tree/teradata_workflow_help
+
