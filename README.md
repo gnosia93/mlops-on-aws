@@ -50,4 +50,3 @@ Airflow can be located in anywhere among your laptop, EKS cluster, EC2 and MWAA(
 ## 레퍼런스 ##
 
 * https://github.com/Teradata/airflow/tree/teradata_workflow_help
-* [An Introduction to MLOps](https://www.youtube.com/watch?v=K6CWjg09fAQ&list=PL3N9eeOlCrP5a6OA473MA4KnOXWnUyV_J)
