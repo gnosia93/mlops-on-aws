@@ -3,7 +3,7 @@
 
 
 In this workshop, we're going to go through how to build machine learing pipeline with apache airflow and MLflow.  
-Airflow can be located in anywhere among your laptop, EKS cluster, EC2 and MWAA(Managed Workflows for Apache Airflow), here we use an airflow on your laptop.  
+Airflow can be located in anywhere among your laptop, EKS cluster, EC2 and MWAA(Managed Workflows for Apache Airflow), here we use an airflow on EKS cluster for distributed training.  
 
 
 ![](https://github.com/gnosia93/mlops-on-aws/blob/main/images/mlops-on-aws.png)
