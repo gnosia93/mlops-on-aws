@@ -1,4 +1,4 @@
-# mlops-on-aws
+# mlops-on-eks
 
 
 
