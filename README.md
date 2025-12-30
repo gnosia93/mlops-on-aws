@@ -11,7 +11,7 @@ Airflow can be located in anywhere among your laptop, EKS cluster, EC2 and MWAA(
 
 ### Prerequisite ###
 
-* [Provision EKS Cluster]()
+* [Provision EKS Cluster](https://github.com/gnosia93/training-on-eks)
 
 * _[Install apache airflow on your PC first](https://github.com/gnosia93/mlops-on-aws/blob/main/tutorial/airflow-on-pc.md)_
 
