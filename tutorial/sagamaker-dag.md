@@ -1,3 +1,42 @@
+
+### airflow-sa 에 Pod 관리 권한 부여 ### 
+```
+cat <<EOF | kubectl apply -f -
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: airflow
+  name: airflow-pod-manager-role
+rules:
+- apiGroups: [""]
+  resources: ["pods", "pods/log", "pods/exec"]
+  verbs: ["get", "list", "watch", "create", "patch", "update", "delete"]
+- apiGroups: [""]
+  resources: ["events"]
+  verbs: ["list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: airflow-pod-manager-binding
+  namespace: airflow
+subjects:
+- kind: ServiceAccount
+  name: airflow-sa
+  namespace: airflow
+roleRef:
+  kind: Role
+  name: airflow-pod-manager-role
+  apiGroup: rbac.authorization.k8s.io
+EOF
+```
+
+
+
+
+
+---
+
 ## TODO : LLM 파이프라인 개발 워크플로우 ##
 * 코드 수정: 로컬 IDE에서 DAG 파일(예: llm_finetune_dag.py)을 작성합니다.
 * Git Push: git push origin main으로 코드를 올립니다.
