@@ -6,7 +6,7 @@ from datetime import datetime
 with DAG(
     dag_id='hello_airflow', # DAG의 고유 ID
     start_date=datetime(2025, 1, 1), # DAG가 처음 실행될 날짜
-    schedule_interval='@daily', # 매일 실행되도록 설정
+    schedule='@daily', # 매일 실행되도록 설정
     catchup=False, # start_date와 현재 날짜 사이의 누락된 DAG 실행을 건너뜀
     tags=['simple', 'hello'] # DAG를 분류하기 위한 태그 (선택 사항)
 ) as dag:
