@@ -13,7 +13,7 @@ Airflow can be located in anywhere among your laptop, EKS cluster, EC2 and MWAA(
 
 * _[Install apache airflow on EKS](https://github.com/gnosia93/mlops-on-aws/blob/main/tutorial/1.airflow-on-eks.md)_
 
-
+* _[Install Spark on EKS](https://github.com/gnosia93/mlops-on-aws/blob/main/tutorial/2.spark-on-eks.md)_
 ### Tutorial ###
 
 1. [S3 센서](https://github.com/gnosia93/mlops-on-aws/blob/main/tutorial/sagamaker-dag.md)
