@@ -1,0 +1,10 @@
+```
+# Spark 전용 네임스페이스 생성
+kubectl create namespace spark-operator
+
+# Helm으로 Spark Operator 설치 (2026년 최신 차트 사용)
+helm install my-release spark-operator/spark-operator \
+    --namespace spark-operator \
+    --set webhook.enable=true
+
+```
