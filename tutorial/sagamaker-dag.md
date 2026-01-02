@@ -1,5 +1,6 @@
 * 목표 : 이번 챕터에서는 llama-3-8b 분산 훈련 스크립트를 KubernetesPodOperator 를 하나 만들어서 실행하도록 한다. 
 
+airflow job -> k8s pod operator -> k8s api server --> trainjob ... 
 
 ### airflow-sa 에 Pod 관리 권한 부여 ### 
 ```
