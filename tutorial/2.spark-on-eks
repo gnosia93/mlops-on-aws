@@ -1,3 +1,9 @@
+
+작동 원리: SparkApplication이라는 커스텀 리소스(YAML)를 만들면, 오퍼레이터가 자동으로 Spark Driver Pod와 Executor Pod들을 생성하고 작업이 끝나면 정리합니다.
+
+
+#### 2. 준비 단계 (인프라 및 권한) ####
+
 ```
 # Spark 전용 네임스페이스 생성
 kubectl create namespace spark-operator
@@ -8,3 +14,58 @@ helm install my-release spark-operator/spark-operator \
     --set webhook.enable=true
 
 ```
+
+#### 3. PySpark 프로그램 작성 (example.py) ####
+
+```
+from pyspark.sql import SparkSession
+
+if __name__ == "__main__":
+    spark = SparkSession.builder.appName("EKS-PySpark-S3").get_session()
+    
+    # S3 데이터 로드 (EKS 환경에서는 s3a:// 프로토콜 사용)
+    df = spark.read.csv("s3a://your-bucket-name/data.csv")
+    df.show()
+    
+    # 처리 로직...
+    spark.stop()
+
+```
+
+#### 4. 도커 이미지 빌드 및 푸시 ####
+* PySpark 코드를 실행하려면 Spark 바이너리와 Python 환경이 포함된 이미지가 필요합니다.
+* Base Image: apache/spark:3.5.0 (또는 최신 4.x 버전)
+* 작성한 example.py를 이미지 내부 /opt/spark/work-dir/에 복사한 후 ECR에 푸시합니다.
+
+
+#### 5. SparkApplication 실행 (YAML) ####
+이제 kubectl apply로 작업을 제출합니다.
+
+```
+apiVersion: "sparkoperator.k8s.io/v1beta2"
+kind: SparkApplication
+metadata:
+  name: pyspark-s3-job
+  namespace: spark-operator
+spec:
+  type: Python
+  pythonVersion: "3"
+  mode: cluster
+  image: "your-account-id.dkr.ecr.ap-northeast-2.amazonaws.com"
+  mainApplicationFile: "local:///opt/spark/work-dir/example.py"
+  sparkVersion: "3.5.0"
+  driver:
+    cores: 1
+    memory: "512m"
+    serviceAccount: airflow-sa  # 이미 만든 S3 권한 SA 재사용 가능
+  executor:
+    cores: 1
+    instances: 2
+    memory: "512m"
+```
+
+#### 6. Airflow와 연동하기 (MLOps의 완성) ####
+배우고 계신 Airflow에서 이 Spark 작업을 실행하고 싶다면, SparkKubernetesOperator를 사용하면 됩니다.
+* Airflow Task 1: 위 YAML 파일을 템플릿으로 사용하여 SparkApplication 리소스 생성.
+* Airflow Task 2: SparkKubernetesSensor를 사용하여 Spark 작업이 성공적으로 끝났는지 모니터링.
+
