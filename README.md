@@ -17,7 +17,8 @@ Airflow can be located in anywhere among your laptop, EKS cluster, EC2 and MWAA(
 
 
 ### Tutorial ###
-1. [call sagemaker Dag](https://github.com/gnosia93/mlops-on-aws/blob/main/tutorial/sagamaker-dag.md)
+
+1. [S3 센서](https://github.com/gnosia93/mlops-on-aws/blob/main/tutorial/sagamaker-dag.md)
 
 
 
